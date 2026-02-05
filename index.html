@@ -5,16 +5,22 @@
   <title>Área VIP de Jogos</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-  <div class="login-box">
-    <h1>Área VIP</h1>
+  <div class="login-container">
+    <div class="login-box">
+      <h1>Área VIP</h1>
+      <p>Acesso exclusivo para assinantes</p>
 
-    <input type="text" id="usuario" placeholder="Usuário">
-    <input type="password" id="senha" placeholder="Senha">
+      <input type="text" id="usuario" placeholder="Usuário">
+      <input type="password" id="senha" placeholder="Senha">
 
-    <button id="btnLogin">Entrar</button>
+      <button onclick="login()">Entrar</button>
+
+      <span class="aviso">
+        Problemas com acesso? Fale no WhatsApp
+      </span>
+    </div>
   </div>
 
   <script src="script.js"></script>
