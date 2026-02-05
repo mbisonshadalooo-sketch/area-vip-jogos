@@ -2,11 +2,13 @@ function login() {
   const usuario = document.getElementById("usuario").value;
   const senha = document.getElementById("senha").value;
 
-  if (usuario === "" || senha === "") {
-    alert("Preencha usuário e senha.");
-    return;
-  }
+  // USUÁRIO E SENHA (você pode mudar depois)
+  const usuarioCorreto = "admin";
+  const senhaCorreta = "1234";
 
-  // Login fake por enquanto
-  alert("Login visual ativo!\nSistema real será ativado em breve.");
+  if (usuario === usuarioCorreto && senha === senhaCorreta) {
+    window.location.href = "jogos.html";
+  } else {
+    alert("Usuário ou senha incorretos!");
+  }
 }
