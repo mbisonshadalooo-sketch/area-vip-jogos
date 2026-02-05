@@ -1,79 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <title>Área de Downloads</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-  <div class="login-box">
-    <h1>Área VIP de Jogos</h1>
-    <p id="status"></p>
+  <div class="jogos-box">
+    <h1>Bem-vindo à Área de Jogos 🎮</h1>
+    <p>Aqui vão ficar os downloads.</p>
 
-    <div class="jogos">
-
-      <!-- JOGO 1 -->
-      <div class="jogo">
-        <img src="https://via.placeholder.com/300x400?text=Jogo+1" alt="Jogo 1">
-        <div class="info">
-          <h2>Jogo Exemplo 1</h2>
-          <p>Jogo de ação e aventura com gráficos incríveis.</p>
-          <a href="#" download>Download</a>
-        </div>
-      </div>
-
-      <!-- JOGO 2 -->
-      <div class="jogo">
-        <img src="https://via.placeholder.com/300x400?text=Jogo+2" alt="Jogo 2">
-        <div class="info">
-          <h2>Jogo Exemplo 2</h2>
-          <p>Corridas insanas e multiplayer online.</p>
-          <a href="#" download>Download</a>
-        </div>
-      </div>
-
-      <!-- JOGO 3 -->
-      <div class="jogo">
-        <img src="https://via.placeholder.com/300x400?text=Jogo+3" alt="Jogo 3">
-        <div class="info">
-          <h2>Jogo Exemplo 3</h2>
-          <p>RPG completo com mundo aberto gigantesco.</p>
-          <a href="#" download>Download</a>
-        </div>
-      </div>
-
-    </div>
-
-    <button onclick="sair()">Sair</button>
+    <a href="#">⬇️ Jogo Exemplo 1</a><br><br>
+    <a href="#">⬇️ Jogo Exemplo 2</a>
   </div>
-
-  <script>
-    const usuario = localStorage.getItem("usuarioLogado");
-    const vence = localStorage.getItem("vence");
-
-    if (!usuario || !vence) {
-      window.location.href = "index.html";
-    }
-
-    const hoje = new Date();
-    const vencimento = new Date(vence);
-
-    if (hoje > vencimento) {
-      alert("Seu acesso venceu. Entre em contato para renovar.");
-      localStorage.clear();
-      window.location.href = "index.html";
-    }
-
-    document.getElementById("status").innerText =
-      "Usuário: " + usuario + " | Acesso válido até: " + vence;
-
-    function sair() {
-      localStorage.clear();
-      window.location.href = "index.html";
-    }
-  </script>
 
 </body>
 </html>
