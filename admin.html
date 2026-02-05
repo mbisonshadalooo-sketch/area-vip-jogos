@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel Admin</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="login-box">
+    <h1>Painel Administrativo</h1>
+
+    <h3>Criar novo usuário</h3>
+
+    <input type="text" id="novoUsuario" placeholder="Usuário">
+    <input type="text" id="novaSenha" placeholder="Senha">
+    <input type="date" id="novoVencimento">
+
+    <button onclick="criarUsuario()">Criar Usuário</button>
+
+    <hr style="margin:30px 0; border-color:#444">
+
+    <h3>Usuários cadastrados</h3>
+    <div id="lista"></div>
+
+    <button onclick="sair()">Sair</button>
+  </div>
+
+  <script>
+    const tipo = localStorage.getItem("tipo");
+    if (tipo !== "admin") {
+      window.location.href = "index.html";
+    }
+
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+    const lista = document.getElementById("lista");
+
+    function listarUsuarios() {
+      lista.innerHTML = "";
+      usuarios.forEach(u => {
+        lista.innerHTML += `
+          <p>
+            <strong>${u.usuario}</strong> |
+            vence: ${u.vence}
+          </p>
+        `;
+      });
+    }
+
+    listarUsuarios();
+
+    function criarUsuario() {
+      const user = document.getElementById("novoUsuario").value;
+      const senha = document.getElementById("novaSenha").value;
+      const vence = document.getElementById("novoVencimento").value;
+
+      if (!user || !senha || !vence) {
+        alert("Preencha todos os campos");
+        return;
+      }
+
+      usuarios.push({
+        usuario: user,
+        senha: senha,
+        vence: vence,
+        tipo: "cliente"
+      });
+
+      localStorage.setItem("usuarios", JSON.stringify(usuarios));
+      listarUsuarios();
+
+      document.getElementById("novoUsuario").value = "";
+      document.getElementById("novaSenha").value = "";
+      document.getElementById("novoVencimento").value = "";
+    }
+
+    function sair() {
+      localStorage.clear();
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>
