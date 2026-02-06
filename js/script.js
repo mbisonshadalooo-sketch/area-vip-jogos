@@ -1,10 +1,15 @@
 function login() {
-  const usuario = document.getElementById("usuario").value;
-  const senha = document.getElementById("senha").value;
+  const usuario = document.getElementById("username").value;
+  const senha = document.getElementById("password").value;
+  const erro = document.getElementById("error");
 
-  if (usuario === "admin" && senha === "1234") {
-    window.location.href = "jogos.html";
+  // Login fixo (simples)
+  const usuarioCorreto = "admin";
+  const senhaCorreta = "1234";
+
+  if (usuario === usuarioCorreto && senha === senhaCorreta) {
+    window.location.href = "dashboard.html";
   } else {
-    alert("Usuário ou senha inválidos");
+    erro.innerText = "Usuário ou senha incorretos ❌";
   }
 }
