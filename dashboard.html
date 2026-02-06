@@ -2,79 +2,47 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Área VIP - Jogos</title>
+  <title>Área VIP - PS3</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body onload="protegerPagina()">
 
-  <div class="dashboard">
-    <h1>🎮 Área VIP de Jogos</h1>
-    <p>Escolha a plataforma e faça seus downloads.</p>
+  <!-- HEADER -->
+  <header class="topo">
+    <h1>🎮 Área VIP PS3</h1>
+    <input type="text" placeholder="Buscar jogo..." onkeyup="filtrarJogos(this.value)">
+    <button onclick="logout()">Sair</button>
+  </header>
 
-    <!-- CABEÇALHO DE CATEGORIAS -->
-    <div class="cabecalho-categorias">
-      <button class="ativo" onclick="mostrarCategoria('ps3')">PS3</button>
-      <button onclick="mostrarCategoria('ps2')">PS2</button>
-      <button onclick="mostrarCategoria('ps1')">PS1</button>
-      <button onclick="mostrarCategoria('snes')">Super Nintendo</button>
+  <!-- CATÁLOGO -->
+  <main class="catalogo">
+
+    <div class="jogo">
+      <img src="img/WhatsApp Image 2026-02-06 at 11.32.47.jpeg">
+      <h3>God of War III</h3>
+      <a href="#" class="btn">Download</a>
     </div>
 
-    <!-- BUSCA -->
-    <div class="busca">
-      <input type="text" id="busca" placeholder="Buscar jogo..." onkeyup="filtrarJogos()">
+    <div class="jogo">
+      <img src="img/WhatsApp Image 2026-02-06 at 11.32.47.jpeg">
+      <h3>The Last of Us</h3>
+      <a href="#" class="btn">Download</a>
     </div>
 
-    <!-- PS3 -->
-    <div id="ps3" class="categoria ativa">
-      <div class="jogos">
-        <div class="jogo" data-nome="god of war 3">
-          <img src="img/WhatsApp Image 2026-02-06 at 11.32.47.jpeg">
-          <h3>God of War 3</h3>
-          <p>Ação e mitologia</p>
-          <a href="#" class="btn" download>Download</a>
-        </div>
-      </div>
+    <div class="jogo">
+      <img src="img/WhatsApp Image 2026-02-06 at 11.32.47.jpeg">
+      <h3>GTA V</h3>
+      <a href="#" class="btn">Download</a>
     </div>
 
-    <!-- PS2 -->
-    <div id="ps2" class="categoria">
-      <div class="jogos">
-        <div class="jogo" data-nome="resident evil 4">
-          <img src="img/WhatsApp Image 2026-02-06 at 11.32.47.jpeg">
-          <h3>Resident Evil 4</h3>
-          <p>Survival Horror</p>
-          <a href="#" class="btn" download>Download</a>
-        </div>
-      </div>
+    <div class="jogo">
+      <img src="img/WhatsApp Image 2026-02-06 at 11.32.47.jpeg">
+      <h3>Uncharted 3</h3>
+      <a href="#" class="btn">Download</a>
     </div>
 
-    <!-- PS1 -->
-    <div id="ps1" class="categoria">
-      <div class="jogos">
-        <div class="jogo" data-nome="crash bandicoot">
-          <img src="img/WhatsApp Image 2026-02-06 at 11.32.47.jpeg">
-          <h3>Crash Bandicoot</h3>
-          <p>Clássico</p>
-          <a href="#" class="btn" download>Download</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- SNES -->
-    <div id="snes" class="categoria">
-      <div class="jogos">
-        <div class="jogo" data-nome="super mario world">
-          <img src="img/WhatsApp Image 2026-02-06 at 11.32.47.jpeg">
-          <h3>Super Mario World</h3>
-          <p>Clássico SNES</p>
-          <a href="#" class="btn" download>Download</a>
-        </div>
-      </div>
-    </div>
-
-    <button onclick="logout()" class="logout">Sair</button>
-  </div>
+  </main>
 
   <script src="js/script.js"></script>
 </body>
