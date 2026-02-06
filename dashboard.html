@@ -2,30 +2,73 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Área VIP - Downloads</title>
+  <title>Área VIP - Jogos</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body onload="protegerPagina(); carregarJogos()">
+<body onload="mostrarCategoria('ps3')">
 
-  <div class="dashboard">
+  <!-- CABEÇALHO / MENU -->
+  <header class="topo">
     <h1>🎮 Área VIP de Jogos</h1>
-    <p>Escolha a plataforma e faça seus downloads.</p>
-<input 
-  type="text" 
-  class="busca" 
-  placeholder="🔍 Buscar jogo pelo nome..."
-  onkeyup="filtrarJogos()">
 
-    <!-- AQUI OS JOGOS VÃO APARECER AUTOMATICAMENTE -->
-    <div id="conteudo"></div>
+    <nav class="menu">
+      <button onclick="mostrarCategoria('ps3')">PS3</button>
+      <button onclick="mostrarCategoria('ps2')">PS2</button>
+      <button onclick="mostrarCategoria('ps1')">PS1</button>
+      <button onclick="mostrarCategoria('snes')">Super Nintendo</button>
+    </nav>
+
+    <input
+      type="text"
+      class="busca"
+      placeholder="🔍 Buscar jogo..."
+      onkeyup="filtrarJogos()">
+  </header>
+
+  <!-- CATÁLOGO -->
+  <main class="dashboard">
+
+    <div class="jogos">
+
+      <!-- PS3 -->
+      <div class="jogo" data-categoria="ps3">
+        <img src="img/WhatsApp Image 2026-02-06 at 11.32.47.jpeg">
+        <h3>Jogo PS3 Exemplo</h3>
+        <p>Ação e aventura no PS3.</p>
+        <a href="#" class="btn" download>Download</a>
+      </div>
+
+      <!-- PS2 -->
+      <div class="jogo" data-categoria="ps2">
+        <img src="img/WhatsApp Image 2026-02-06 at 11.32.47.jpeg">
+        <h3>Jogo PS2 Exemplo</h3>
+        <p>Clássico do PlayStation 2.</p>
+        <a href="#" class="btn" download>Download</a>
+      </div>
+
+      <!-- PS1 -->
+      <div class="jogo" data-categoria="ps1">
+        <img src="img/WhatsApp Image 2026-02-06 at 11.32.47.jpeg">
+        <h3>Jogo PS1 Exemplo</h3>
+        <p>Nostalgia total do PS1.</p>
+        <a href="#" class="btn" download>Download</a>
+      </div>
+
+      <!-- SNES -->
+      <div class="jogo" data-categoria="snes">
+        <img src="img/WhatsApp Image 2026-02-06 at 11.32.47.jpeg">
+        <h3>Jogo SNES Exemplo</h3>
+        <p>Clássico do Super Nintendo.</p>
+        <a href="#" class="btn" download>Download</a>
+      </div>
+
+    </div>
 
     <button onclick="logout()" class="logout">Sair</button>
-  </div>
 
-  <!-- ORDEM IMPORTANTE -->
-  <script src="js/jogos.js"></script>
+  </main>
+
   <script src="js/script.js"></script>
-
 </body>
 </html>
