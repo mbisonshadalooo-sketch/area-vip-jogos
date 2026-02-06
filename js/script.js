@@ -1,9 +1,8 @@
 function login() {
-  const usuario = document.getElementById("username").value;
-  const senha = document.getElementById("password").value;
-  const erro = document.getElementById("error");
+  const usuario = document.getElementById("usuario").value;
+  const senha = document.getElementById("senha").value;
+  const erro = document.getElementById("erro");
 
-  // Login fixo (simples)
   const usuarioCorreto = "admin";
   const senhaCorreta = "1234";
 
