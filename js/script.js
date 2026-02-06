@@ -12,3 +12,7 @@ function login() {
     erro.innerText = "Usuário ou senha incorretos ❌";
   }
 }
+
+function logout() {
+  window.location.href = "index.html";
+}
