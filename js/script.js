@@ -56,3 +56,13 @@ function logout() {
   localStorage.clear();
   window.location.href = "index.html";
 }
+function filtrarJogos() {
+  const busca = document.querySelector(".busca").value.toLowerCase();
+  const jogos = document.querySelectorAll(".jogo");
+
+  jogos.forEach(jogo => {
+    const titulo = jogo.querySelector("h3").innerText.toLowerCase();
+    jogo.style.display = titulo.includes(busca) ? "block" : "none";
+  });
+}
+
