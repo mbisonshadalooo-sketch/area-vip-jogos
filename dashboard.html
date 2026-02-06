@@ -6,59 +6,21 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body onload="protegerPagina()">
+<body onload="protegerPagina(); carregarJogos()">
 
   <div class="dashboard">
     <h1>🎮 Área VIP de Jogos</h1>
     <p>Escolha a plataforma e faça seus downloads.</p>
 
-    <!-- PS3 -->
-    <h2 class="categoria">🎮 PlayStation 3</h2>
-    <div class="jogos">
-      <div class="jogo">
-        <img src="img/WhatsApp Image 2026-02-06 at 11.32.47.jpeg">
-        <h3>Jogo PS3 Exemplo</h3>
-        <p>Descrição do jogo PS3.</p>
-        <a href="#" class="btn" download>Download</a>
-      </div>
-    </div>
-
-    <!-- PS2 -->
-    <h2 class="categoria">🎮 PlayStation 2</h2>
-    <div class="jogos">
-      <div class="jogo">
-        <img src="img/WhatsApp Image 2026-02-06 at 11.32.47.jpeg">
-        <h3>Jogo PS2 Exemplo</h3>
-        <p>Descrição do jogo PS2.</p>
-        <a href="#" class="btn" download>Download</a>
-      </div>
-    </div>
-
-    <!-- PS1 -->
-    <h2 class="categoria">🎮 PlayStation 1</h2>
-    <div class="jogos">
-      <div class="jogo">
-        <img src="img/WhatsApp Image 2026-02-06 at 11.32.47.jpeg">
-        <h3>Jogo PS1 Exemplo</h3>
-        <p>Descrição do jogo PS1.</p>
-        <a href="#" class="btn" download>Download</a>
-      </div>
-    </div>
-
-    <!-- SUPER NINTENDO -->
-    <h2 class="categoria">🕹️ Super Nintendo</h2>
-    <div class="jogos">
-      <div class="jogo">
-        <img src="img/WhatsApp Image 2026-02-06 at 11.32.47.jpeg">
-        <h3>Jogo SNES Exemplo</h3>
-        <p>Clássico do Super Nintendo.</p>
-        <a href="#" class="btn" download>Download</a>
-      </div>
-    </div>
+    <!-- AQUI OS JOGOS VÃO APARECER AUTOMATICAMENTE -->
+    <div id="conteudo"></div>
 
     <button onclick="logout()" class="logout">Sair</button>
   </div>
 
+  <!-- ORDEM IMPORTANTE -->
+  <script src="js/jogos.js"></script>
   <script src="js/script.js"></script>
+
 </body>
 </html>
