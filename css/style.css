@@ -1,24 +1,148 @@
-.topo {
-  max-width: 1200px;
-  margin: auto;
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* FUNDO GERAL */
+body {
+  background: #141414;
+  color: #fff;
+}
+
+/* CONTAINER PRINCIPAL */
+.dashboard {
   padding: 20px;
-  text-align: center;
 }
 
-.menu {
-  margin: 20px 0;
+/* TÍTULO */
+.dashboard h1 {
+  font-size: 32px;
+  margin-bottom: 5px;
 }
 
-.menu button {
-  margin: 5px;
-  padding: 10px 16px;
-  border-radius: 20px;
+.dashboard p {
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+/* ===== CABEÇALHO DE CATEGORIAS (TIPO NETFLIX) ===== */
+.cabecalho-categorias {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+}
+
+.cabecalho-categorias button {
+  background: none;
   border: none;
+  color: #bbb;
+  font-size: 16px;
   cursor: pointer;
-  background: #00c8ff;
-  font-weight: bold;
+  padding: 8px 12px;
+  transition: 0.3s;
 }
 
-.menu button:hover {
-  background: #00a6d6;
+.cabecalho-categorias button:hover,
+.cabecalho-categorias button.ativo {
+  color: #fff;
+  border-bottom: 2px solid #e50914;
+}
+
+/* ===== BARRA DE BUSCA ===== */
+.busca {
+  margin-bottom: 20px;
+}
+
+.busca input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+/* ===== CATÁLOGO DE JOGOS ===== */
+.categoria {
+  display: none;
+}
+
+.categoria.ativa {
+  display: block;
+}
+
+.jogos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 15px;
+}
+
+/* ===== CARD DO JOGO ===== */
+.jogo {
+  background: #1f1f1f;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.jogo:hover {
+  transform: scale(1.05);
+}
+
+/* CAPA */
+.jogo img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* INFO DO JOGO */
+.jogo h3 {
+  font-size: 14px;
+  padding: 8px;
+}
+
+.jogo p {
+  font-size: 12px;
+  padding: 0 8px;
+  color: #aaa;
+}
+
+/* BOTÃO DOWNLOAD */
+.jogo .btn {
+  display: block;
+  background: #e50914;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 4px;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.jogo .btn:hover {
+  background: #b20710;
+}
+
+/* BOTÃO SAIR */
+.logout {
+  margin-top: 30px;
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.logout:hover {
+  background: #666;
 }
