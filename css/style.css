@@ -1,93 +1,95 @@
-/* RESET BÁSICO */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
-/* FUNDO GERAL */
 body {
-  background: #141414;
+  background: #0f0f0f;
   color: #fff;
 }
 
-/* CONTAINER PRINCIPAL */
-.dashboard {
-  padding: 20px;
-}
-
-/* TÍTULO */
-.dashboard h1 {
-  font-size: 32px;
-  margin-bottom: 5px;
-}
-
-.dashboard p {
-  color: #bbb;
-  margin-bottom: 20px;
-}
-
-/* ===== CABEÇALHO DE CATEGORIAS (TIPO NETFLIX) ===== */
-.cabecalho-categorias {
+/* LOGIN */
+.login-page {
   display: flex;
-  gap: 15px;
-  margin-bottom: 25px;
-  border-bottom: 1px solid #333;
-  padding-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.cabecalho-categorias button {
-  background: none;
-  border: none;
-  color: #bbb;
-  font-size: 16px;
-  cursor: pointer;
-  padding: 8px 12px;
-  transition: 0.3s;
+.login-box {
+  background: #1c1c1c;
+  padding: 30px;
+  width: 320px;
+  border-radius: 10px;
+  text-align: center;
 }
 
-.cabecalho-categorias button:hover,
-.cabecalho-categorias button.ativo {
-  color: #fff;
-  border-bottom: 2px solid #e50914;
-}
-
-/* ===== BARRA DE BUSCA ===== */
-.busca {
+.login-box h1 {
   margin-bottom: 20px;
 }
 
-.busca input {
+.login-box input {
   width: 100%;
-  max-width: 400px;
   padding: 10px;
-  border-radius: 4px;
+  margin: 8px 0;
   border: none;
-  outline: none;
-  font-size: 14px;
+  border-radius: 5px;
 }
 
-/* ===== CATÁLOGO DE JOGOS ===== */
-.categoria {
-  display: none;
+.login-box button {
+  width: 100%;
+  padding: 10px;
+  background: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.categoria.ativa {
-  display: block;
+#erro {
+  margin-top: 10px;
+  color: red;
 }
 
-.jogos {
+/* HEADER */
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #141414;
+}
+
+.topo input {
+  width: 300px;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+}
+
+.topo button {
+  padding: 8px 15px;
+  background: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+/* CATÁLOGO */
+.catalogo {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 15px;
+  gap: 20px;
+  padding: 30px;
 }
 
-/* ===== CARD DO JOGO ===== */
 .jogo {
-  background: #1f1f1f;
-  border-radius: 6px;
-  overflow: hidden;
+  background: #1c1c1c;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
   transition: transform 0.3s;
 }
 
@@ -95,54 +97,23 @@ body {
   transform: scale(1.05);
 }
 
-/* CAPA */
 .jogo img {
   width: 100%;
   height: 220px;
   object-fit: cover;
+  border-radius: 5px;
 }
 
-/* INFO DO JOGO */
 .jogo h3 {
   font-size: 14px;
-  padding: 8px;
+  margin: 10px 0;
 }
 
-.jogo p {
-  font-size: 12px;
-  padding: 0 8px;
-  color: #aaa;
-}
-
-/* BOTÃO DOWNLOAD */
-.jogo .btn {
+.btn {
   display: block;
   background: #e50914;
   color: #fff;
-  text-align: center;
-  text-decoration: none;
   padding: 8px;
-  margin: 8px;
-  border-radius: 4px;
-  font-size: 13px;
-  transition: 0.3s;
-}
-
-.jogo .btn:hover {
-  background: #b20710;
-}
-
-/* BOTÃO SAIR */
-.logout {
-  margin-top: 30px;
-  background: #444;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.logout:hover {
-  background: #666;
+  border-radius: 5px;
+  text-decoration: none;
 }
