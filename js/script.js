@@ -1,35 +1,40 @@
-function login() {
-  const usuario = document.getElementById("usuario").value;
-  const senha = document.getElementById("senha").value;
+function mostrarCategoria(id) {
+  // esconder todas
+  document.querySelectorAll('.categoria').forEach(cat => {
+    cat.classList.remove('ativa');
+  });
 
-  if (usuario === "admin" && senha === "1234") {
-    window.location.href = "dashboard.html";
-  } else {
-    alert("Usuário ou senha incorretos ❌");
-  }
+  // remover ativo dos botões
+  document.querySelectorAll('.cabecalho-categorias button').forEach(btn => {
+    btn.classList.remove('ativo');
+  });
+
+  // mostrar categoria clicada
+  document.getElementById(id).classList.add('ativa');
+
+  // ativar botão
+  event.target.classList.add('ativo');
+
+  // limpar busca
+  document.getElementById('busca').value = '';
+  filtrarJogos();
+}
+
+function filtrarJogos() {
+  const termo = document.getElementById('busca').value.toLowerCase();
+
+  document.querySelectorAll('.categoria.ativa .jogo').forEach(jogo => {
+    const nome = jogo.dataset.nome;
+    jogo.style.display = nome.includes(termo) ? 'block' : 'none';
+  });
+}
+
+/* SIMULAÇÃO DE PROTEÇÃO */
+function protegerPagina() {
+  // aqui depois entra validação real
 }
 
 function logout() {
-  window.location.href = "index.html";
-}
-
-/* ===== FILTRO POR CATEGORIA ===== */
-function mostrarCategoria(categoria) {
-  const jogos = document.querySelectorAll(".jogo");
-
-  jogos.forEach(jogo => {
-    jogo.style.display =
-      jogo.dataset.categoria === categoria ? "block" : "none";
-  });
-}
-
-/* ===== BUSCA POR NOME ===== */
-function filtrarJogos() {
-  const busca = document.querySelector(".busca").value.toLowerCase();
-  const jogos = document.querySelectorAll(".jogo");
-
-  jogos.forEach(jogo => {
-    const nome = jogo.querySelector("h3").innerText.toLowerCase();
-    jogo.style.display = nome.includes(busca) ? "block" : "none";
-  });
+  alert("Logout realizado");
+  // depois você pode redirecionar
 }
