@@ -2,42 +2,142 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Área VIP - Downloads</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Área VIP de Downloads</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f0f0f;
+      color: #ffffff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .banner {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .banner img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+
+    .card {
+      background: #1c1c1c;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card h3 {
+      margin: 0 0 8px 0;
+    }
+
+    .card p {
+      margin: 0;
+      color: #aaa;
+    }
+
+    .btn-download {
+      background: #00c853;
+      color: #000;
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn-download:hover {
+      background: #00e676;
+    }
+
+    .logout {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .logout button {
+      background: #ff5252;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .logout button:hover {
+      background: #ff1744;
+    }
+  </style>
 </head>
+
 <body>
 
-  <div class="dashboard">
+  <div class="container">
+
     <h1>🎮 Área VIP de Downloads</h1>
-    <p>Bem-vindo! Aqui você terá acesso aos seus conteúdos exclusivos.</p>
 
-    <div class="jogos">
-
-      <!-- JOGO 1 -->
-      <div class="jogo">
-        <img src="img/jogo1.jpg" alt="Capa do Jogo 1">
-
-        <h2>Jogo Exemplo 1</h2>
-        <p>Descrição curta do jogo.</p>
-
-        <a href="#" class="btn">Download</a>
-      </div>
-
-      <!-- JOGO 2 -->
-      <div class="jogo">
-        <img src="img/jogo1.jpg" alt="Capa do Jogo 2">
-
-        <h2>Jogo Exemplo 2</h2>
-        <p>Outro jogo para teste.</p>
-
-        <a href="#" class="btn">Download</a>
-      </div>
-
+    <!-- IMAGEM / BANNER -->
+    <div class="banner">
+      <img src="img/WhatsApp Image 2026-02-06 at 11.32.47.jpeg" alt="Área VIP">
     </div>
 
-    <button onclick="logout()" class="logout">Sair</button>
+    <div class="intro">
+      <p>Bem-vindo! Aqui você terá acesso aos seus conteúdos exclusivos.</p>
+    </div>
+
+    <!-- JOGO 1 -->
+    <div class="card">
+      <div>
+        <h3>Jogo Exemplo 1</h3>
+        <p>Descrição curta do jogo.</p>
+      </div>
+      <a href="#" class="btn-download">Download</a>
+    </div>
+
+    <!-- JOGO 2 -->
+    <div class="card">
+      <div>
+        <h3>Jogo Exemplo 2</h3>
+        <p>Outro jogo para teste.</p>
+      </div>
+      <a href="#" class="btn-download">Download</a>
+    </div>
+
+    <!-- SAIR -->
+    <div class="logout">
+      <button onclick="logout()">Sair</button>
+    </div>
+
   </div>
 
-  <script src="js/script.js"></script>
+  <script>
+    function logout() {
+      // Aqui você pode limpar sessão/localStorage se quiser
+      window.location.href = "login.html";
+    }
+  </script>
+
 </body>
 </html>
