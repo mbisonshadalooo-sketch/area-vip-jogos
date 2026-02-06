@@ -1,78 +1,35 @@
-// ===== USUÁRIOS FIXOS =====
-const usuarios = [
-  {
-    usuario: "admin",
-    senha: "1234",
-    venceEm: "2026-03-06" // AAAA-MM-DD
-  },
-  {
-    usuario: "teste",
-    senha: "123",
-    venceEm: "2026-02-20"
-  }
-];
-
-// ===== LOGIN =====
 function login() {
-  const usuarioInput = document.getElementById("usuario").value;
-  const senhaInput = document.getElementById("senha").value;
+  const usuario = document.getElementById("usuario").value;
+  const senha = document.getElementById("senha").value;
 
-  const usuarioEncontrado = usuarios.find(u =>
-    u.usuario === usuarioInput && u.senha === senhaInput
-  );
-
-  if (!usuarioEncontrado) {
-    alert("Usuário ou senha incorretos.");
-    return;
-  }
-
-  const hoje = new Date();
-  const vencimento = new Date(usuarioEncontrado.venceEm);
-
-  if (hoje > vencimento) {
-    alert("Seu acesso expirou. Entre em contato para renovar.");
-    return;
-  }
-
-  // salva sessão
-  localStorage.setItem("logado", "true");
-  localStorage.setItem("usuario", usuarioEncontrado.usuario);
-
-  // redireciona
-  window.location.href = "dashboard.html";
-}
-
-// ===== PROTEÇÃO DO DASHBOARD =====
-function protegerPagina() {
-  const logado = localStorage.getItem("logado");
-
-  if (logado !== "true") {
-    window.location.href = "index.html";
+  if (usuario === "admin" && senha === "1234") {
+    window.location.href = "dashboard.html";
+  } else {
+    alert("Usuário ou senha incorretos ❌");
   }
 }
 
-// ===== LOGOUT =====
 function logout() {
-  localStorage.clear();
   window.location.href = "index.html";
 }
+
+/* ===== FILTRO POR CATEGORIA ===== */
+function mostrarCategoria(categoria) {
+  const jogos = document.querySelectorAll(".jogo");
+
+  jogos.forEach(jogo => {
+    jogo.style.display =
+      jogo.dataset.categoria === categoria ? "block" : "none";
+  });
+}
+
+/* ===== BUSCA POR NOME ===== */
 function filtrarJogos() {
   const busca = document.querySelector(".busca").value.toLowerCase();
   const jogos = document.querySelectorAll(".jogo");
 
   jogos.forEach(jogo => {
-    const titulo = jogo.querySelector("h3").innerText.toLowerCase();
-    jogo.style.display = titulo.includes(busca) ? "block" : "none";
+    const nome = jogo.querySelector("h3").innerText.toLowerCase();
+    jogo.style.display = nome.includes(busca) ? "block" : "none";
   });
 }
-function filtrarJogos() {
-  const busca = document.querySelector(".busca").value.toLowerCase();
-  const jogos = document.querySelectorAll(".jogo");
-
-  jogos.forEach(jogo => {
-    const titulo = jogo.querySelector("h3").innerText.toLowerCase();
-    jogo.style.display = titulo.includes(busca) ? "block" : "none";
-  });
-}
-
-
